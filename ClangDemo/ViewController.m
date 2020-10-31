@@ -45,7 +45,7 @@ void __sanitizer_cov_trace_pc_guard_init(uint32_t *start,
 
 void __sanitizer_cov_trace_pc_guard(uint32_t *guard) {
   if (!*guard) return;  // Duplicate the guard check.
-
+  //__builtin_return_address 它的作用其实就是去读取 x30 中所存储的要返回时下一条指令的地址 . 所以他名称叫做 __builtin_return_address . 换句话说 , 这个地址就是我当前这个函数执行完毕后 , 要返回到哪里去 .
   void *PC = __builtin_return_address(0);
   char PcDescr[1024];
   //__sanitizer_symbolize_pc(PC, "%p %F %L", PcDescr, sizeof(PcDescr));
