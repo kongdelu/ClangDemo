@@ -9,7 +9,7 @@
 #import <dlfcn.h>
 #import <libkern/OSAtomic.h>
 @interface ViewController ()
-
+@property (nonatomic, strong) UIButton *btn;
 @end
 
 @implementation ViewController
@@ -23,12 +23,12 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(80, 80, 80, 60);
-    [btn setTitle:@"touch" forState:UIControlStateNormal];
-    btn.backgroundColor = [UIColor redColor];
-    [btn addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
+    self.btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.btn.frame = CGRectMake(80, 80, 80, 60);
+    [self.btn setTitle:@"touch" forState:UIControlStateNormal];
+    self.btn.backgroundColor = [UIColor redColor];
+    [self.btn addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.btn];
 }
 
 - (void)buttonAction {
