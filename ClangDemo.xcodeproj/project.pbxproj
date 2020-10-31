@@ -292,7 +292,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_CFLAGS = "-fsanitize-coverage=trace-pc-guard";
+				OTHER_CFLAGS = "-fsanitize-coverage=func,trace-pc-guard\n";
 				PRODUCT_BUNDLE_IDENTIFIER = kdl.ClangDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -311,7 +311,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_CFLAGS = "-fsanitize-coverage=trace-pc-guard";
+				OTHER_CFLAGS = "-fsanitize-coverage=func,trace-pc-guard\n";
 				PRODUCT_BUNDLE_IDENTIFIER = kdl.ClangDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
