@@ -27,7 +27,4 @@
     return YES;
 }
 
-- (void)methodTwo {
-    NSLog(@"%s",__FUNCTION__);
-}
 @end
